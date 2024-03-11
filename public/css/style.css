@@ -1,0 +1,181 @@
+/* navbar  */
+body {
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.container {
+  flex: 1;
+}
+.navbar {
+  /* height: 5rem; */
+  background-color: #ffffff;
+}
+.fa-compass {
+  font-size: 2rem;
+  color: #ff385c;
+}
+
+.nav-link {
+  color: #222222 !important;
+}
+
+/* footer */
+
+.f-info {
+  background-color: #ebebeb;
+  height: 8rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+
+.f-info-socials i {
+  font-size: 1.2rem;
+  margin-right: 1rem;
+}
+
+.f-info-socials,
+.f-info-links {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.f-info-links a {
+  text-decoration: none;
+  color: #222222;
+}
+
+/* card */
+
+.listing-card {
+  border: none !important;
+  margin-bottom: 2rem !important;
+}
+.card-img-top {
+  border-radius: 1rem !important;
+  width: 100% !important;
+  object-fit: cover !important;
+}
+.card-body {
+  padding: 1 !important;
+}
+
+.listing-items {
+  text-decoration: none;
+}
+
+/* card hover  */
+
+.card-img-overlay {
+  opacity: 0;
+}
+
+.card-img-overlay:hover {
+  opacity: 0.2;
+  background-color: #ffffff;
+}
+
+/* form */
+
+.add-button {
+  background-color: #ff385c !important;
+  border: none !important;
+}
+
+/* show page */
+.show-btn {
+  display: flex;
+  margin-bottom: 1rem !important;
+}
+
+.show-img {
+  height: 30vh !important;
+}
+
+/* map box */
+
+#map {
+  height: 400px;
+  width: 100%;
+  border-radius: 15px;
+}
+
+/* search bar  */
+
+.btn-search {
+  border-radius: 100% !important;
+  background-color: #ff385c !important;
+  color: #ffffff !important;
+}
+
+.input-search {
+  border-radius: 25px !important;
+  padding: 0px 4rem !important;
+}
+
+.tax-info {
+  display: none;
+}
+
+/* slider */
+
+.slider-main {
+  display: flex;
+  align-items: center;
+}
+.slider-container-main {
+  position: relative;
+  overflow: hidden;
+}
+
+.slider-content {
+  display: flex;
+  align-items: center;
+  transition: transform 0.5s ease;
+}
+
+.slider-item {
+  text-align: center;
+  align-items: center;
+  padding: 0px 10px;
+  opacity: 0.8;
+}
+
+.slider-item:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+.icons {
+  cursor: pointer;
+  border: none;
+  background-color: none !important;
+}
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+.slider-item p {
+  font-size: small;
+}
+
+.slider-container {
+  display: flex;
+}
+
+/* from switch  */
+
+.slide-btn {
+  border: 1px solid #e2e2e2;
+  border-radius: 15px;
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 12px !important;
+}
