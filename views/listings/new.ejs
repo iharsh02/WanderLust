@@ -59,9 +59,28 @@
           </div>
         </div>
 
+        <div>
+          <label for="country" class="form-label">Category</label>
+          <select name="listing[category]" class="form-select" required>
+            <option value="">-Select Category-</option>
+            <option value="trending">Trending</option>
+            <option value="rooms">Rooms</option>
+            <option value="iconic_cities">Iconic Cities</option>
+            <option value="mountains">Mountains</option>
+            <option value="artic">Artic</option>
+            <option value="castles">Castles</option>
+            <option value="beaches">Beaches</option>
+            <option value="camping">Camping</option>
+            <option value="farms">Farms</option>
+          </select>
+          <div class="invalid-feedback">Please Select Category</div>
+        </div>
+
+
         <div class="mb-3">
           <label for="location" class="form-label">Location</label>
-          <input name="listing[location]" placeholder="enter location (e.g jaipur , Rajasthan)" type="text" class="form-control" required />
+          <input name="listing[location]" placeholder="enter location (e.g jaipur , Rajasthan)" type="text"
+            class="form-control" required />
           <div class="valid-feedback">
             Looks good!
           </div>
