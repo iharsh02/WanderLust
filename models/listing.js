@@ -2,6 +2,19 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const Review = require("./reviews");
 
+
+const categoryEnum = [
+  "trending",
+  "rooms",
+  "iconic_cities",
+  "mountains",
+  "arctic",
+  "castles",
+  "beaches",
+  "camping",
+  "farms",
+];
+
 const listingSchema = new Schema({
   title: {
     type: String,
@@ -42,6 +55,7 @@ const listingSchema = new Schema({
   category: {
     type: String,
     required: true,
+    enum: categoryEnum, 
   },
 });
 

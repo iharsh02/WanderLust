@@ -90,3 +90,23 @@ module.exports.deleteListings = async (req, res) => {
   req.flash("success", "Listing Deleted!");
   res.redirect("/listings");
 };
+
+module.exports.searchPlace = async (req, res) => {
+  const searchQuery = req.query.search;
+  const searchRegex = new RegExp(searchQuery, "i");
+
+  console.log(searchQuery);
+  const filteredListings = await Listing.find({
+    $or: [
+      { title: searchRegex },
+      { location: searchRegex },
+      { category: searchRegex },
+    ],
+  });
+  if (filteredListings.length === 0) {
+    req.flash("error", `No place found for search query: ${searchQuery}`);
+    return res.redirect("/listings");
+  }
+
+  res.render("listings/index.ejs", { allListings: filteredListings });
+};

@@ -61,3 +61,12 @@ module.exports.isReviewAuthor = async (req, res, next) => {
   }
   next();
 };
+
+module.exports.isSearch = async (req, res, next) => {
+  const totalListings = await Listing.countDocuments();
+  if (totalListings === 0) {
+      req.flash("error", "No listings found.");
+      return res.redirect("/listings");
+  }
+  next();
+};
