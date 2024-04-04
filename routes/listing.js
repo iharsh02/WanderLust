@@ -1,7 +1,12 @@
 const express = require("express");
 const router = express.Router();
 const wrapAsync = require("../utils/wrapAsync.js");
-const { isLoggedIn, isOwner, validateListing , isSearch} = require("../middleware.js");
+const {
+  isLoggedIn,
+  isOwner,
+  validateListing,
+  isSearch,
+} = require("../middleware.js");
 const listingController = require("../controllers/listings.js");
 const multer = require("multer");
 const { storage } = require("../cloudConfig.js");
@@ -26,6 +31,8 @@ router.get(
   isLoggedIn,
   wrapAsync(listingController.searchPlace)
 );
+
+router.get('/cate/:category', listingController.getListingsByCategory);
 
 router
   .route("/:id")

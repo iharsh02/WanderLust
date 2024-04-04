@@ -21,44 +21,7 @@
   });
 })();
 
-// slider.js
-
-const slider = document.querySelector(".slider-container");
-const sliderContent = document.querySelector(".slider-content");
-const slides = document.querySelectorAll(".slider-item");
-const prevBtn = document.querySelector(".prev");
-const nextBtn = document.querySelector(".next");
-
-let currentIndex = 0;
-const slideWidth = slides[0].clientWidth;
-
-function updateSlider() {
-  sliderContent.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-}
-
-function goToNextSlide() {
-  if (currentIndex < slides.length - 1) {
-    currentIndex++;
-    updateSlider();
-  }
-}
-
-function goToPrevSlide() {
-  if (currentIndex > 0) {
-    currentIndex--;
-    updateSlider();
-  }
-}
-
-prevBtn.addEventListener("click", goToPrevSlide);
-nextBtn.addEventListener("click", goToNextSlide);
-
-// slider button.js
-
-
-
-
-let taxSwitch = document.getElementById("flexSwitchCheckDefault");
+let taxSwitch = document.getElementById("flexSwitchCheckReverse");
 taxSwitch.addEventListener("click", () => {
   let taxInfo = document.getElementsByClassName("tax-info");
   console.log(taxInfo);

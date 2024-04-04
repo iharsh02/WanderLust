@@ -95,7 +95,6 @@ module.exports.searchPlace = async (req, res) => {
   const searchQuery = req.query.search;
   const searchRegex = new RegExp(searchQuery, "i");
 
-  console.log(searchQuery);
   const filteredListings = await Listing.find({
     $or: [
       { title: searchRegex },
@@ -109,4 +108,15 @@ module.exports.searchPlace = async (req, res) => {
   }
 
   res.render("listings/index.ejs", { allListings: filteredListings });
+};
+
+module.exports.getListingsByCategory = async (req, res) => {
+  const { category } = req.params;
+  const allListings = await Listing.find({ category });
+
+  if (allListings.length === 0) {
+    req.flash("error", `No places found! : ${category}`);
+    return res.redirect("/listings");
+  }
+  res.render("listings/index", { allListings });
 };
